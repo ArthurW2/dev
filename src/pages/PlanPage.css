@@ -39,7 +39,6 @@
 }
 
 .day-add {
-  margin-top: auto;
   height: 44px;
   border-radius: 12px;
   border: 1px dashed rgba(0,0,0,0.25);
@@ -180,4 +179,52 @@
 .recipe-compact-card__meta {
   font-size: 12px;
   opacity: 0.75;
+}
+
+.day-card__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.day-card__delete {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.6;
+  padding: 2px 6px;
+}
+
+.day-card__delete:hover {
+  opacity: 1;
+}
+/* 
+.plan-day-picker {
+} */
+
+.plan-day-change {
+    height: 44px;
+    min-width: 250px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.plan-date-input {
+    position: absolute;
+    padding: 5px;
+    width: 18px;
+    margin-top: 3px;
+    height: 25px;
+    margin-left: -250px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }

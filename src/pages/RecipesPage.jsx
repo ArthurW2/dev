@@ -19,7 +19,7 @@ export default function RecipesPage() {
                 <h1 className="page-title">Recipes</h1>
 
                 <button
-                    type="button" // Prevent form submit behaviors
+                    type="button"
                     className="btn btn--primary"
                     onClick={() => setIsAddOpen(!isAddOpen)} // Open the modal
                 >

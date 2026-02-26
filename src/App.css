@@ -13,7 +13,7 @@ body {
   /* max-width: 1000px; */
   width:100%;
 
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 0 24px;
 }
 
@@ -61,16 +61,16 @@ body {
 
 /* Grid container for recipe cards */
 .recipe-grid {
-  display: grid;                 /* Use CSS grid layout */
-  grid-template-columns: 1fr 1fr;/* Two equal-width columns */
-  gap: 16px;                     /* Space between cards */
-  margin-top: 16px;              /* Space below the heading */
+  display: grid;                 
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;                   
+  margin-top: 16px;            
 }
 
 /* Responsive: switch to one column on small screens */
 @media (max-width: 700px) {
   .recipe-grid {
-    grid-template-columns: 1fr;  /* One column */
+    grid-template-columns: 1fr;  
   }
 }
 /* Header row above the grid */
