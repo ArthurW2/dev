@@ -1,0 +1,21 @@
+.ingredient-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.7fr 0.7fr 44px;
+  gap: 10px;
+  align-items: center;
+}
+
+.ingredient-grid--header {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.ingredient-grid--header >div {
+  padding-left: 2px;
+}
