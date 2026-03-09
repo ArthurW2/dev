@@ -218,9 +218,9 @@ export default function PlanPage() {
         </aside>
   </div>
       <section className="plan-main">
-        <div className="plan-main__header">
-          <h1 className="plan-main__title">Recipes</h1>
-          <div className="plan-main__hint">Drag a recipe onto a day.</div>
+        <div className="plan-main-header">
+          <h1 className="plan-main-title">Recipes</h1>
+          <div className="plan-main-hint">Drag a recipe onto a day.</div>
         </div>
 
         <div className="recipe-compact-grid">
@@ -239,14 +239,14 @@ export default function PlanPage() {
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
       >
-        <div className="day-card__header">
+        <div className="day-card-header">
           {/* <div className="day-card__label">{day.label}</div> */}
-          {dateLabel && <div className="day-card__label">{dateLabel}</div>}
+          {dateLabel && <div className="day-card-label">{dateLabel}</div>}
           {/* <div className="day-card__count">{day.recipeIds.length}</div> I don't need the recipe length for each day */}
 
           <button
             type="button"
-            className="day-card__delete"
+            className="day-card-delete"
             onClick={onRemoveDay}
             aria-label={`Remove ${day.label}`}
           >
@@ -254,19 +254,19 @@ export default function PlanPage() {
           </button>
         </div>
         {day.recipeIds.length=== 0 ? (
-          <div className="day-card__empty">Drop recipes here</div>
+          <div className="day-card-empty">Drop recipes here</div>
         ) : (
-          <ul className="day-card__items">
+          <ul className="day-card-items">
           {day.recipeIds.map((id) => {
             const r = recipeById.get(id);
             if(!r) return null;
 
             return (
-              <li key={id} className="day-card__item">
-              <span className="day-card__item-title">{r.title}</span>
+              <li key={id} className="day-card-item">
+              <span className="day-card-item-title">{r.title}</span>
               <button 
               type="button"
-              className="day-card__remove"
+              className="day-card-remove"
               onClick={() => onRemove(id)}
               aria-label={'Remove ${r.title}'}
               >✕</button>
@@ -289,8 +289,8 @@ export default function PlanPage() {
         tabIndex={0}
         title="Drag onto a day"
       >
-        <div className="recipe-compact-card__title">{recipe.title}</div>
-        <div className="recipe-compact-card__meta">
+        <div className="recipe-compact-card-title">{recipe.title}</div>
+        <div className="recipe-compact-card-meta">
           {recipe.ingredients.length} ingredients • {recipe.servings} servings
         </div>
       </div>

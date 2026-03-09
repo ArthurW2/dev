@@ -25,7 +25,7 @@
   gap: 12px;
 }
 
-.plan-sidebar__title {
+.plan-sidebar-title {
   font-weight: 800;
   font-size: 16px;
 }
@@ -59,7 +59,7 @@
   background: white;
 }
 
-.day-card__header {
+.day-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,12 +67,12 @@
   margin-bottom: 10px;
 }
 
-.day-card__label {
+.day-card-label {
   min-width:190px;
   font-weight: 700;
 }
 
-.day-card__count {
+.day-card-count {
   font-size: 12px;
   opacity: 0.7;
   border: 1px solid rgba(0,0,0,0.12);
@@ -80,13 +80,13 @@
   padding: 3px 8px;
 }
 
-.day-card__empty {
+.day-card-empty {
   font-size: 13px;
   opacity: 0.7;
   padding: 10px 0 4px;
 }
 
-.day-card__items {
+.day-card-items {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -95,7 +95,7 @@
   gap: 8px;
 }
 
-.day-card__item {
+.day-card-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -106,7 +106,7 @@
   background: rgba(0,0,0,0.02);
 }
 
-.day-card__item-title {
+.day-card-item-title {
   font-size: 13px;
   font-weight: 600;
   overflow: hidden;
@@ -114,7 +114,7 @@
   white-space: nowrap;
 }
 
-.day-card__remove {
+.day-card-remove {
   border: none;
   background: transparent;
   cursor: pointer;
@@ -122,7 +122,7 @@
   opacity: 0.75;
 }
 
-.day-card__remove:hover {
+.day-card-remove:hover {
   opacity: 1;
 }
 
@@ -130,7 +130,7 @@
   padding: 6px 0;
 }
 
-.plan-main__header {
+.plan-main-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -138,11 +138,11 @@
   margin-bottom: 12px;
 }
 
-.plan-main__title {
+.plan-main-title {
   margin: 0;
 }
 
-.plan-main__hint {
+.plan-main-hint {
   font-size: 13px;
   opacity: 0.7;
 }
@@ -172,23 +172,23 @@
   cursor: grabbing;
 }
 
-.recipe-compact-card__title {
+.recipe-compact-card-title {
   font-weight: 750;
   margin-bottom: 6px;
 }
 
-.recipe-compact-card__meta {
+.recipe-compact-card-meta {
   font-size: 12px;
   opacity: 0.75;
 }
 
-.day-card__header-actions {
+.day-card-header-actions {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.day-card__delete {
+.day-card-delete {
   border: none;
   background: transparent;
   cursor: pointer;
@@ -197,7 +197,7 @@
   padding: 2px 6px;
 }
 
-.day-card__delete:hover {
+.day-card-delete:hover {
   opacity: 1;
 }
 /* 

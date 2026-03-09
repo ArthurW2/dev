@@ -1,46 +1,49 @@
 import "./IngredientEditor.css"
-// Export a reusable ingredient editor component
+import {useRef, useEffect} from "react";
+
 export default function IngredientEditor({ ingredients, setIngredients, unitOptions, categoryOptions }) {
+
+  const listRef = useRef(null);
+  const prevLength = useRef(ingredients.length);
+
+  useEffect(() => {
+    if( !listRef.current) return;
+
+    if(ingredients.length > prevLength.current) {
+      listRef.current.scrollTop = listRef.current.scrollHeight;
+    }
+
+    prevLength.current = ingredients.length;
+  }, [ingredients]);
+
   return (
-    <div className="ingredient-editor">
-      <div className="ingredient-grid ingredient-grid--header">
-        <div>Name</div>
-        <div>Qty</div> 
-        <div>Unit</div> 
-        <div>Category</div>
-        <div />
+    <div>
+      <div className="ingredient-editor" ref={listRef}>
+        <div className="ingredient-grid ingredient-grid-header">
+          <div>Name</div>
+          <div>Qty</div> 
+          <div>Unit</div> 
+          <div>Category</div>
+          <div />
+        </div>
+
+        {ingredients.map((ing, index) => (
+          <IngredientRow
+            key={ing.rowId} 
+            ingredient={ing}
+            index={index} 
+            ingredients={ingredients} 
+            setIngredients={setIngredients} 
+            unitOptions={unitOptions} 
+            categoryOptions={categoryOptions}
+          />
+        ))}
+
       </div>
-
-      {ingredients.map((ing, index) => (
-        <IngredientRow
-          key={ing.rowId} 
-          ingredient={ing}
-          index={index} 
-          ingredients={ingredients} 
-          setIngredients={setIngredients} 
-          unitOptions={unitOptions} 
-          categoryOptions={categoryOptions}
-        />
-      ))}
-
-      <button
-        type="button"
-        className="btn btn--secondary"
-        onClick={() => {
-          // Add a new ingredient row to the list
-          setIngredients([
-            ...ingredients,
-            { rowId: crypto.randomUUID(), name: "", quantity: "", unit: "ea", category: "produce" },
-          ]);
-        }}
-      >
-        + Add ingredient line
-      </button>
     </div>
   );
 }
 
-// A single ingredient row component (kept inside this file)
 function IngredientRow({ ingredient, index, ingredients, setIngredients, unitOptions, categoryOptions }) {
   return (
     <div className="ingredient-grid">
@@ -108,7 +111,7 @@ function IngredientRow({ ingredient, index, ingredients, setIngredients, unitOpt
 
       <button
         type="button" 
-        className="btn btn--danger"
+        className="btn btn-danger"
         onClick={() => {
           setIngredients(ingredients.filter((_, i) => i !== index));
         }}

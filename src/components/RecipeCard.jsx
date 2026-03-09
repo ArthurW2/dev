@@ -1,40 +1,56 @@
-import "./RecipeCard.css";
+import "../pages/RecipesPage.css"
 
-export default function RecipeCard({recipe, onClick}) {
-    return (
-        <article
-        className="recipe-card"
-        onClick={onClick}
-        role={onClick ? "button" : undefined}
-        tabIndex={onClick ? 0 : undefined}
-        onKeyDown={(e) => {
-            if(!onClick) return;
-            if(e.key==="Enter" || e.key === " ") onClick();
-        }}
+export default function RecipeCard({ recipe, onDelete }) {
+  return (
+    <article className="recipe-card">
+      <div className="recipe-card-header">
+        <div>
+          <h3 className="recipe-card-title">{recipe.title}</h3>
+          <div className="recipe-card-servings">{recipe.servings} servings</div>
+        </div>
+
+        <button
+          type="button"
+          className="recipe-card-delete"
+          onClick={() => onDelete(recipe.id)}
+          aria-label={`Delete ${recipe.title}`}
         >
-            <div className="recipe-card__top">
-                <h3 className="recipe-card__title">
-                    {recipe.title} 
-                </h3>
+          ✕
+        </button>
+      </div>
 
-                <span className="recipe-card__servings">
-                    {recipe.servings} servings
-                </span>
-            </div>
-            <p className="recipe-card__meta">
-                {recipe.ingredients.length} ingredients
-            </p>
+      <div className="recipe-card-content">
+        <div className="recipe-card-column">
+          <div className="recipe-card-section-title">Instructions</div>
+          <p className="recipe-card-instructions">
+            {recipe.instructions?.trim() || "No instructions added yet."}
+          </p>
+        </div>
 
-            {recipe.tags?.length > 0 && (
-                <div className="recipe-card__tags">
-                    {recipe.tags.slice(0,3).map((t)=> (
-                        <span key={t} className="recipe-card__tag">
-                            {t}
-                        </span>
-                    ))}
-                </div>
-            )}
+        <div className="recipe-card-column">
+          <div className="recipe-card-section-title">Ingredients</div>
 
-        </article>
-    )
+          {recipe.ingredients?.length > 0 ? (
+            <ul className="recipe-card-ingredients">
+              {recipe.ingredients.map((ingredient, index) => (
+                <li
+                  key={`${recipe.id}-${ingredient.normalizedName}-${index}`}
+                  className="recipe-card-ingredient"
+                >
+                  <span className="recipe-card-ingredient-name">
+                    {ingredient.name}
+                  </span>
+                  <span className="recipe-card-ingredient-meta">
+                    {ingredient.quantity} {ingredient.unit}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="recipe-card-empty">No ingredients added yet.</p>
+          )}
+        </div>
+      </div>
+    </article>
+  );
 }

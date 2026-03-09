@@ -31,8 +31,8 @@ export default function AddRecipeModal({ isOpen, onClose, onSave }) {
       }}
     >
       <div className="modal">
-        <div className="modal__header">
-          <h2 className="modal__title">Add Recipe</h2>
+        <div className="modal-header">
+          <h2 className="modal-title">Add Recipe</h2>
           <button type="button" className="icon-btn" onClick={onClose} aria-label="Close">
             ✕
           </button>
@@ -76,7 +76,7 @@ export default function AddRecipeModal({ isOpen, onClose, onSave }) {
           }}
         >
           <label className="field">
-            <span className="field__label">Title</span>
+            <span className="field-label">Title</span>
             <input
               className="input"
               value={title} 
@@ -87,7 +87,7 @@ export default function AddRecipeModal({ isOpen, onClose, onSave }) {
           </label>
 
           <label className="field">
-            <span className="field__label">Servings</span>
+            <span className="field-label">Servings</span>
             <input
               className="input"
               type="number" 
@@ -99,7 +99,7 @@ export default function AddRecipeModal({ isOpen, onClose, onSave }) {
           </label>
 
           <label className="field">
-            <span className="field__label">Instructions</span> 
+            <span className="field-label">Instructions</span> 
             <textarea
               className="textarea"
               value={instructions}
@@ -110,7 +110,22 @@ export default function AddRecipeModal({ isOpen, onClose, onSave }) {
           </label>
 
           <div className="field">
-            <span className="field__label">Ingredients</span>
+            <div className="field-label ingredient-list-header">
+              <span>Ingredients</span>
+            
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => {
+                  setIngredients([
+                    ...ingredients,
+                    { rowId: crypto.randomUUID(), name: "", quantity: "", unit: "ea", category: "produce" },
+                  ]);
+                }}
+              >
+                + Add ingredient line
+              </button>
+            </div>
             <IngredientEditor
               ingredients={ingredients}
               setIngredients={setIngredients}
@@ -119,12 +134,12 @@ export default function AddRecipeModal({ isOpen, onClose, onSave }) {
             />
           </div>
 
-          <div className="modal__footer">
-            <button type="button" className="btn btn--secondary" onClick={onClose}>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary" onClick={onClose}>
               Cancel
             </button>
 
-            <button type="submit" className="btn btn--primary">
+            <button type="submit" className="btn btn-primary">
               Save Recipe
             </button>
           </div>

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { getOrSeedRecipes } from "../lib/recipesRepo";
+import { getOrSeedRecipes, saveNewRecipeList } from "../lib/recipesRepo";
 import RecipeCard from "../components/RecipeCard";
 import AddRecipeModal from "../components/AddRecipeModal";
+import "./RecipesPage.css";
+
 
 export default function RecipesPage() {
     const [recipes, setRecipes] = useState([]);
@@ -12,6 +14,21 @@ export default function RecipesPage() {
         const data = getOrSeedRecipes();
         setRecipes(data);
     }, []);
+        
+    function handleDeleteRecipe(recipeId) {
+        const recipeToDelete = recipes.find((recipe) => recipe.id === recipeId);
+        if (!recipeToDelete) return;
+
+        const confirmed = window.confirm(
+            `Delete "${recipeToDelete.title}"? This can't be undone.`
+        );
+
+        if (!confirmed) return;
+
+        const next = recipes.filter((recipe) => recipe.id !== recipeId);
+        setRecipes(next);
+        saveNewRecipeList(next);
+    }
     
     return (
         <div>
@@ -20,8 +37,8 @@ export default function RecipesPage() {
 
                 <button
                     type="button"
-                    className="btn btn--primary"
-                    onClick={() => setIsAddOpen(!isAddOpen)} // Open the modal
+                    className="btn btn-primary"
+                    onClick={() => setIsAddOpen(!isAddOpen)}
                 >
                 + Add Recipe
                 </button>
@@ -31,7 +48,7 @@ export default function RecipesPage() {
                     <RecipeCard 
                         key={r.id}
                         recipe={r}
-                        onClick={() => console.log("Clicked recipe:", r.id)}
+                        onDelete={handleDeleteRecipe}
                     />
                 ))}
             </div>
@@ -40,9 +57,10 @@ export default function RecipesPage() {
                 isOpen={isAddOpen}
                 onClose={() => setIsAddOpen(false)}
                 onSave={(newRecipe) => {
-                    const next = [newRecipe, ...recipies];
+                    const next = [newRecipe, ...recipes];
                     setRecipes(next);
-                    saveRecipes(next);
+                    saveNewRecipeList(next);
+                    setIsAddOpen(false);
                 }}
             />
         </div>

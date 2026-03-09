@@ -59,20 +59,6 @@ body {
   color: white;
 }
 
-/* Grid container for recipe cards */
-.recipe-grid {
-  display: grid;                 
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;                   
-  margin-top: 16px;            
-}
-
-/* Responsive: switch to one column on small screens */
-@media (max-width: 700px) {
-  .recipe-grid {
-    grid-template-columns: 1fr;  
-  }
-}
 /* Header row above the grid */
 .page-header {
   display: flex;
@@ -95,17 +81,17 @@ body {
   background: white;
 }
 
-.btn--primary {
+.btn-primary {
   background: black;
   color: white;
   border-color: black;
 }
 
-.btn--secondary {
+.btn-secondary {
   background: white;
 }
 
-.btn--danger {
+.btn-danger {
   background: white;
 }
 
@@ -117,7 +103,7 @@ body {
   margin: 12px 0;
 }
 
-.field__label {
+.field-label {
   font-weight: 600;
   font-size: 13px;
 }
@@ -152,7 +138,7 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
-.modal__header {
+.modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -160,11 +146,11 @@ body {
   margin-bottom: 8px;
 }
 
-.modal__title {
+.modal-title {
   margin: 0;
 }
 
-.modal__footer {
+.modal-footer {
   display: flex;
   justify-content: flex-end;
   gap: 10px;

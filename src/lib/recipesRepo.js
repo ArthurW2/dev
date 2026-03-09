@@ -8,3 +8,8 @@ export function getOrSeedRecipes() {
   saveRecipes(seedRecipes);
   return seedRecipes;
 }
+
+export function saveNewRecipeList(recipes) {
+  if(recipes.length === 0) return;
+  return saveRecipes(recipes);
+}
