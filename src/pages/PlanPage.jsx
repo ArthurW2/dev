@@ -19,7 +19,7 @@ export default function PlanPage() {
     const saved = loadPlan();
     return (
        saved ?? {
-        startDate: null,
+        startDate: getTodaysDate(),
         days: [makeDay("Day 1"), makeDay("Day 2"), makeDay("Day 3")]}
       );
   });
@@ -40,6 +40,15 @@ export default function PlanPage() {
     return map;
   },[recipes]);
 
+  function getTodaysDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }
+
   function handleDragStart(e, recipeId) {
     e.dataTransfer.setData("text/plain", recipeId);
     e.dataTransfer.effectAllowed = "copy";
@@ -53,7 +62,7 @@ export default function PlanPage() {
     setPlan((prev) => ({
       ...prev,
       days: prev.days.map((d) => {
-        if(d.id !== dayID) return d;
+        if(d.id !== dayId) return d;
       
         if(d.recipeIds.includes(recipeId)) return d;
         
@@ -86,6 +95,16 @@ export default function PlanPage() {
     }));
   }
 
+  function handleClearPlan() {
+    setPlan((prev) => ({
+      ...prev,
+      startDate: getTodaysDate(),
+      days: []
+    }));
+
+
+  }
+  
   function addDay() {
     setPlan((prev) => ({
       ...prev,
@@ -150,6 +169,8 @@ export default function PlanPage() {
           >
             {plan.startDate ? `Start: ${plan.startDate}` : "Select Plan Start Date"}
           </button>
+
+          <button type="button" className="plan-clear" onClick={(e, plan) => handleClearPlan(e, plan)} title="Clear Plan and Restart">X</button>
 
           <input
             id="plan-start-date"
@@ -218,20 +239,20 @@ export default function PlanPage() {
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
       >
-        <div className="day-dcard__header">
+        <div className="day-card__header">
           {/* <div className="day-card__label">{day.label}</div> */}
           {dateLabel && <div className="day-card__label">{dateLabel}</div>}
           {/* <div className="day-card__count">{day.recipeIds.length}</div> I don't need the recipe length for each day */}
-        </div>
 
-        <button
-          type="button"
-          className="day-card__delete"
-          onClick={onRemoveDay}
-          aria-label={`Remove ${day.label}`}
-        >
-          ✕
-        </button>
+          <button
+            type="button"
+            className="day-card__delete"
+            onClick={onRemoveDay}
+            aria-label={`Remove ${day.label}`}
+          >
+            ✕
+          </button>
+        </div>
         {day.recipeIds.length=== 0 ? (
           <div className="day-card__empty">Drop recipes here</div>
         ) : (
