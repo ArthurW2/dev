@@ -1,0 +1,294 @@
+Phase 0 — Environment & Mental Model (Short but Important)
+🎯 Goal
+
+Get set up and understand how data flows end-to-end.
+
+Learn
+
+Python
+
+Virtual environments
+
+Project structure
+
+Logging basics
+
+SQL
+
+Warehouse vs OLTP mindset
+
+Why analytics schemas differ from app schemas
+
+Deliverables
+
+Repo initialized
+
+Python venv + requirements
+
+README skeleton
+
+Local or cloud warehouse connected
+
+⏱️ Time: 0.5–1 day
+
+Phase 1 — Raw Data Ingestion (Python Fundamentals)
+🎯 Goal
+
+Ingest raw data reliably and repeatably.
+
+Learn
+
+Python
+
+HTTP requests (requests / httpx)
+
+Pagination & rate limits
+
+JSON parsing
+
+Writing files (JSON/CSV)
+
+Idempotency patterns
+
+SQL
+
+External/raw tables
+
+Basic DDL
+
+Partitioning concepts
+
+Deliverables
+
+Python script to ingest events
+
+Raw data stored unchanged (bronze)
+
+Date-partitioned raw tables
+
+⏱️ Time: 3–5 days
+
+Phase 2 — Cleaning & Standardization (SQL First)
+🎯 Goal
+
+Turn messy raw data into clean, trustworthy tables.
+
+Learn
+
+Python
+
+Minimal (focus shifts to SQL)
+
+SQL
+
+CTEs for readability
+
+Deduplication strategies
+
+Timestamp normalization
+
+Handling nulls & bad values
+
+Window functions (ROW_NUMBER)
+
+Deliverables
+
+Silver-layer tables
+
+Deduplicated events
+
+Parsed timestamps
+
+Clean enums
+
+⏱️ Time: 3–4 days
+
+Phase 3 — Analytics Data Modeling (Advanced SQL)
+🎯 Goal
+
+Design analytics-ready schemas.
+
+Learn
+
+Python
+
+None (intentionally)
+
+SQL
+
+Star schema design
+
+Fact vs dimension tables
+
+Slowly Changing Dimensions (SCD Type 2)
+
+Incremental models
+
+Late-arriving data handling
+
+Deliverables
+
+Fact tables (events, orders)
+
+Dimension tables (users, date, device)
+
+Incremental load logic
+
+⏱️ Time: 4–6 days
+
+Phase 4 — Orchestration & Automation (Python + Systems Thinking)
+🎯 Goal
+
+Run everything automatically and safely.
+
+Learn
+
+Python
+
+DAG-based thinking
+
+Task dependencies
+
+Retry logic
+
+Parameterized runs
+
+SQL
+
+Dependency ordering
+
+Fail-fast behavior
+
+Deliverables
+
+Daily scheduled DAG
+
+Backfill capability
+
+Clear task separation
+
+Failure alerts/logs
+
+⏱️ Time: 3–5 days
+
+Phase 5 — Data Quality & Trust (Critical Phase)
+🎯 Goal
+
+Prevent silent data corruption.
+
+Learn
+
+Python
+
+Assertions vs validations
+
+When pipelines should fail
+
+SQL
+
+Constraints as tests
+
+Referential integrity checks
+
+Freshness & anomaly detection
+
+Deliverables
+
+Blocking data quality checks
+
+Tests for facts & dimensions
+
+Documented failure behavior
+
+⏱️ Time: 2–3 days
+
+Phase 6 — Performance, Cost & Scale (Senior Signal)
+🎯 Goal
+
+Make the system efficient and scalable.
+
+Learn
+
+Python
+
+Efficient batch processing
+
+Avoiding unnecessary reprocessing
+
+SQL
+
+Partition pruning
+
+Incremental strategies
+
+Query cost analysis
+
+Deliverables
+
+Optimized queries
+
+Partitioned fact tables
+
+Cost-aware transformations
+
+⏱️ Time: 2–3 days
+
+Phase 7 — Analytics Outputs & Storytelling
+🎯 Goal
+
+Prove the data is useful.
+
+Learn
+
+Python
+
+None
+
+SQL
+
+Metric definitions
+
+Funnel analysis
+
+Retention queries
+
+Deliverables
+
+DAU, funnels, retention queries
+
+Clear metric definitions
+
+Sample analysis results
+
+⏱️ Time: 2–3 days
+
+Phase 8 — Production Polish (What Gets You Hired)
+🎯 Goal
+
+Make it look and feel real.
+
+Learn
+
+Python
+
+Clean code
+
+Error handling
+
+Logging best practices
+
+SQL
+
+Documentation-first modeling
+
+Deliverables
+
+Final README
+
+Architecture diagram
+
+Clear tradeoff explanations
+
+Resume-ready bullets
+
+⏱️ Time: 1–2 days

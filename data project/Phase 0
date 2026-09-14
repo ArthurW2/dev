@@ -1,0 +1,6 @@
+saved for later:
+partition pattern used later
+s3://bucket/events/dt=YYYY-MM-DD/part-0000.jsonl
+
+
+s3://de-portfolio-raw-awilson-9283/events/dt=example/

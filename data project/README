@@ -1,0 +1,293 @@
+# Product Analytics Data Platform
+
+## Overview
+
+This project demonstrates a **production-grade data engineering platform** for product analytics. It ingests raw event and transaction data, processes it through layered transformations, enforces data quality guarantees, and publishes analytics-ready tables for reporting and decision-making.
+
+The goal of this project is to showcase **real-world data engineering skills**: pipeline reliability, data modeling, orchestration, quality checks, and cost-aware design — not just data movement.
+
+---
+
+## Business Context
+
+Assume a B2C SaaS or e-commerce product where stakeholders want to answer:
+
+* How many **daily active users (DAU)** do we have?
+* What does the **user conversion funnel** look like?
+* Which features drive **retention and revenue**?
+* Can we **trust the data**, and how do we detect issues early?
+
+This platform is designed to support those questions reliably at scale.
+
+---
+
+## High-Level Architecture
+
+**Batch ELT architecture with layered data models**:
+
+1. **Ingestion** – Raw data is pulled from APIs and flat files
+2. **Bronze layer** – Immutable raw data stored as-is
+3. **Silver layer** – Cleaned, standardized, deduplicated data
+4. **Gold layer** – Analytics-ready fact and dimension tables
+5. **Consumption** – SQL queries or BI tools
+
+Orchestration ensures dependencies, retries, backfills, and data quality checks.
+
+---
+
+## Tech Stack
+
+**Languages & Tools**
+
+* Python – data ingestion and orchestration tasks
+* SQL – transformations and analytics modeling
+* dbt – transformations, tests, and documentation
+* Airflow (or Dagster) – workflow orchestration
+
+**Storage & Compute**
+
+* Object storage (S3 / GCS / local MinIO)
+* Cloud data warehouse (BigQuery / Snowflake / Redshift)
+
+**Data Quality & Ops**
+
+* dbt tests (not null, uniqueness, relationships, freshness)
+* Logging and retry logic
+* Incremental models and idempotent ingestion
+
+---
+
+## Data Sources
+
+### Event Data
+
+Simulated product analytics events (JSON):
+
+* `user_id`
+* `event_type` (page_view, signup, add_to_cart, purchase, etc.)
+* `event_timestamp`
+* `device_type`
+* `country`
+* `session_id`
+
+### Transaction Data
+
+CSV-based transactional data:
+
+* `order_id`
+* `user_id`
+* `order_timestamp`
+* `amount`
+* `currency`
+
+The data intentionally includes:
+
+* Late-arriving events
+* Duplicate records
+* Schema changes
+
+These edge cases are handled explicitly in the pipeline.
+
+---
+
+## Data Modeling Strategy
+
+This project follows a **medallion architecture**:
+
+### Bronze (Raw)
+
+* Immutable
+* No transformations
+* Partitioned by ingestion date
+* Used only for reprocessing and debugging
+
+### Silver (Cleaned)
+
+* Parsed timestamps
+* Standardized column names and types
+* Deduplication logic
+* Basic validations
+
+### Gold (Analytics-Ready)
+
+**Fact tables**:
+
+* `fact_events`
+* `fact_orders`
+* `fact_sessions`
+
+**Dimension tables**:
+
+* `dim_users` (SCD Type 2)
+* `dim_date`
+* `dim_device`
+
+This layer is optimized for BI tools and analyst queries.
+
+---
+
+## Orchestration Design
+
+The DAG is designed to be **production-safe**:
+
+* Daily scheduled runs
+* Clear task dependencies
+* Automatic retries with backoff
+* Failure notifications
+* Support for historical backfills
+
+Task groups:
+
+1. Ingest raw data
+2. Load bronze tables
+3. Run dbt transformations
+4. Execute data quality tests
+5. Publish gold models
+
+A pipeline run fails if **critical data quality checks fail**.
+
+---
+
+## Data Quality & Reliability
+
+Data quality is treated as a **first-class concern**.
+
+Implemented checks include:
+
+* Primary key uniqueness
+* Not-null constraints
+* Accepted values for enums
+* Referential integrity between facts and dimensions
+* Freshness checks for late or missing data
+
+### Failure Handling
+
+* Failed tests stop downstream publishing
+* Raw data is preserved for reprocessing
+* Pipelines are idempotent and safe to re-run
+
+---
+
+## Incremental & Backfill Strategy
+
+* All large tables are **incremental**
+* Partitioned by event or order date
+* Late-arriving data is reprocessed automatically
+
+Backfills are supported by:
+
+* Parameterized DAG runs
+* Date-range-based ingestion
+* Idempotent transformations
+
+This allows safe historical reprocessing without duplication.
+
+---
+
+## Cost Considerations
+
+The platform is designed to minimize warehouse cost:
+
+* Partition pruning on all fact tables
+* Columnar storage formats (Parquet)
+* Incremental dbt models
+* Limited full-refresh operations
+
+Tradeoffs are documented in dbt model descriptions.
+
+---
+
+## Analytics Outputs
+
+Example metrics supported:
+
+* Daily Active Users (DAU)
+* Conversion rate (signup → purchase)
+* Funnel drop-off analysis
+* Retention (D1, D7)
+* Revenue per user
+
+These are exposed as views or tables ready for BI tools.
+
+---
+
+## Repository Structure
+
+```
+data-platform/
+├── ingestion/
+│   └── ingest_events.py
+├── orchestration/
+│   └── dags/
+├── dbt/
+│   ├── models/
+│   ├── tests/
+│   └── docs/
+├── infra/
+│   └── setup.md
+├── README.md
+```
+
+---
+
+## Key Design Tradeoffs
+
+* **Batch over streaming**: chosen for simplicity, reliability, and cost
+* **ELT over ETL**: leverage warehouse compute for transformations
+* **Denormalized analytics models**: faster queries for analysts
+* **Fail fast on data quality issues**: correctness over availability
+
+---
+
+## What I Would Improve Next
+
+Given more time, I would:
+
+* Add data contracts for upstream producers
+* Implement CI for dbt and DAG validation
+* Add automated cost monitoring
+* Introduce near-real-time ingestion for key events
+* Add lineage visualization
+
+---
+
+## Skills Demonstrated
+
+* End-to-end data pipeline design
+* Production-ready orchestration
+* Analytics-focused data modeling
+* Data quality enforcement
+* Incremental processing and backfills
+* Cost-aware warehouse usage
+
+---
+
+## How to Run Locally
+
+See `infra/setup.md` for environment setup, credentials, and execution steps.
+
+---
+
+## Contact
+
+This project was built as a demonstration of applied data engineering skills.
+
+Questions or feedback are welcome.
+
+
+---extra resume building poitns
+Product Analytics Data Platform — Data Engineering Project
+
+Designed and built an end-to-end ELT data platform ingesting raw event and transaction data into an analytics-ready warehouse
+
+Implemented batch pipelines using Python, SQL, dbt, and Airflow with retries, idempotency, and backfill support
+
+Modeled analytics data using a star schema with fact and dimension tables to support product and revenue metrics
+
+Built incremental transformations and partitioned tables to reduce warehouse compute cost and improve query performance
+
+Enforced data quality guarantees with automated tests for freshness, uniqueness, nulls, and referential integrity
+
+Designed pipelines to handle late-arriving data, schema changes, and duplicate events
+
+Documented architecture decisions, tradeoffs, and failure scenarios to support long-term maintainability

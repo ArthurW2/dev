@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.5.3" pages="4">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.1" pages="4">
   <diagram name="Home Dashboard" id="CE3I_ZH6uQiwkxceYUjT">
     <mxGraphModel dx="703" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -68,7 +68,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Recipes" id="9kB2N4UFwEuEXhkU7gnB">
-    <mxGraphModel dx="827" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1665" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="6oUnSgYgFLRAYYkr1Bxh-0" />
         <mxCell id="6oUnSgYgFLRAYYkr1Bxh-1" parent="6oUnSgYgFLRAYYkr1Bxh-0" />
@@ -124,7 +124,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Plan" id="iTPQqEQPsZfFeLoDF_6D">
-    <mxGraphModel dx="703" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1665" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="D4vq13pAm_wYk_x7Vmn7-0" />
         <mxCell id="D4vq13pAm_wYk_x7Vmn7-1" parent="D4vq13pAm_wYk_x7Vmn7-0" />
@@ -215,46 +215,52 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="Pantry" id="4ceZ8uD_zhrbqsRBWp8j">
-    <mxGraphModel dx="703" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+  <diagram name="Pantry" id="THk2fp195XUypijq3a1J">
+    <mxGraphModel dx="1665" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
-        <mxCell id="n0hMtjRibJ-tlUHpQnfS-0" />
-        <mxCell id="n0hMtjRibJ-tlUHpQnfS-1" parent="n0hMtjRibJ-tlUHpQnfS-0" />
-        <mxCell id="n0hMtjRibJ-tlUHpQnfS-2" parent="n0hMtjRibJ-tlUHpQnfS-1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+        <mxCell id="IudkvmfSQJmms8GXfZN1-0" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-1" parent="IudkvmfSQJmms8GXfZN1-0" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-2" parent="IudkvmfSQJmms8GXfZN1-1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
           <mxGeometry height="680" width="680" x="80" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="n0hMtjRibJ-tlUHpQnfS-3" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+        <mxCell id="IudkvmfSQJmms8GXfZN1-3" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="60" width="680" x="80" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="n0hMtjRibJ-tlUHpQnfS-4" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+        <mxCell id="IudkvmfSQJmms8GXfZN1-4" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="60" width="120" x="80" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="n0hMtjRibJ-tlUHpQnfS-6" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+        <mxCell id="IudkvmfSQJmms8GXfZN1-5" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="60" width="120" x="320" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="-4YhABFxC0NaLcjuR7vK-0" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Shopping &amp;amp; Pantry" vertex="1">
+        <mxCell id="IudkvmfSQJmms8GXfZN1-6" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Shopping &amp;amp; Pantry" vertex="1">
           <mxGeometry height="60" width="120" x="440" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="-4YhABFxC0NaLcjuR7vK-1" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Shopping List" vertex="1">
+        <mxCell id="IudkvmfSQJmms8GXfZN1-7" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Pantry" vertex="1">
           <mxGeometry height="620" width="190" x="80" y="140" as="geometry" />
         </mxCell>
-        <mxCell id="_6OiLCJZOr8G0Q3pIUsu-0" parent="n0hMtjRibJ-tlUHpQnfS-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Selected Recipes &amp;amp; Ingredient Breakdown" vertex="1">
-          <mxGeometry height="30" width="390" x="230" y="140" as="geometry" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-8" parent="IudkvmfSQJmms8GXfZN1-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Selected Recipes" vertex="1">
+          <mxGeometry height="30" width="140" x="480" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="_6OiLCJZOr8G0Q3pIUsu-1" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ingredient Breakdown" vertex="1">
-          <mxGeometry height="150" width="470" x="280" y="180" as="geometry" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-9" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ingredient Breakdown" vertex="1">
+          <mxGeometry height="150" width="240" x="490" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="_6OiLCJZOr8G0Q3pIUsu-2" parent="n0hMtjRibJ-tlUHpQnfS-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Recipe 1" vertex="1">
-          <mxGeometry height="30" width="80" x="280" y="180" as="geometry" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-10" parent="IudkvmfSQJmms8GXfZN1-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Recipe 1" vertex="1">
+          <mxGeometry height="30" width="80" x="510" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="_6OiLCJZOr8G0Q3pIUsu-3" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ingredient Breakdown" vertex="1">
-          <mxGeometry height="150" width="470" x="280" y="360" as="geometry" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-11" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ingredient Breakdown" vertex="1">
+          <mxGeometry height="150" width="240" x="490" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="_6OiLCJZOr8G0Q3pIUsu-4" parent="n0hMtjRibJ-tlUHpQnfS-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ingredient Breakdown" vertex="1">
-          <mxGeometry height="150" width="470" x="280" y="530" as="geometry" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-12" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ingredient Breakdown" vertex="1">
+          <mxGeometry height="150" width="240" x="490" y="540" as="geometry" />
         </mxCell>
-        <mxCell id="wy7zooKhZcSqzHxrwxsL-0" parent="n0hMtjRibJ-tlUHpQnfS-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Check box &quot;I not longer have this item&quot; and it gets removed from the pantry list. this way the pantry is built from the recipes they have been using" vertex="1">
-          <mxGeometry height="270" width="170" x="90" y="150" as="geometry" />
+        <mxCell id="IudkvmfSQJmms8GXfZN1-13" parent="IudkvmfSQJmms8GXfZN1-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Check box &quot;I not longer have this item&quot; and it gets removed from the pantry list. this way the pantry is built from the recipes they have been using" vertex="1">
+          <mxGeometry height="270" width="170" x="90" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="j7EcUALAERm4Ds11OS_k-1" parent="IudkvmfSQJmms8GXfZN1-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Shopping List" vertex="1">
+          <mxGeometry height="620" width="190" x="270" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="j7EcUALAERm4Ds11OS_k-2" parent="IudkvmfSQJmms8GXfZN1-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Highlight items that you already have - different color highlights based on if you have enough already or if partial match" vertex="1">
+          <mxGeometry height="270" width="170" x="280" y="140" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

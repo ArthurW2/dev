@@ -6,13 +6,6 @@
   margin-top: 16px;            
 }
 
-/* Responsive: switch to one column on small screens */
-@media (max-width: 900px) {
-  .recipe-grid {
-    grid-template-columns: 1fr;  
-  }
-}
-
 .recipe-card {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 14px;
@@ -20,16 +13,6 @@
   padding: 16px;
 
 }
-
-/* .recipe-card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-}
-
-.recipe-card:focus {
-  outline: 2px solid rgba(0, 0, 0, 0.35);
-  outline-offset: 2px;
-} */
 
 .recipe-card-header {
     display:flex;
@@ -63,13 +46,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
-
-@media (max-width: 700px) {
-  .recipe-card-content {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 .recipe-card-column {
   min-width: 0;
@@ -164,4 +140,17 @@
 }
 .ingredient-list-header >span {
     width: 478px;
+}
+
+/* Responsive: switch to one column on small screens */
+@media (max-width: 1200px) {
+  .recipe-grid {
+    grid-template-columns: 1fr;  
+  }
+}
+
+@media (max-width: 900px) {
+  .recipe-card-content {
+    grid-template-columns: 1fr;
+  }
 }
