@@ -1,0 +1,98 @@
+body
+{
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.red
+{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.green
+{
+  width: 80px;
+  height: 80px;
+  background-color: green;
+}
+
+.blue
+{
+  width: 60px;
+  height: 60px;
+  background-color: blue;
+}
+
+.yellow
+{
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+}
+
+.exercise-1,
+.exercise-2,
+.exercise-3,
+.exercise-4
+{
+
+}
+
+.exercise-1 div,
+.exercise-2 div,
+.exercise-3 div,
+.exercise-4 div
+{
+
+}
+
+/* Exercise 2 */
+
+.exercise-2
+{
+
+}
+
+.exercise-2 .green,
+.exercise-2 .blue,
+.exercise-2 .yellow
+{
+
+}
+
+/* Exercise 3 */
+
+.exercise-3
+{
+
+}
+
+.exercise-3 .green
+{
+
+}
+
+.exercise-3 .blue,
+.exercise-3 .yellow
+{
+
+}
+
+/* Exercise 4 */
+
+.exercise-4
+{
+
+}
+
+.exercise-4 .blue
+{
+
+}
+
+.exercise-4 .yellow
+{
+
+}

@@ -1,0 +1,18 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+h1 {
+    background-color: hsl(254, 95%, 57%);
+    color: hsl(434, 95%, 57%, 0.9);
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 20px;
+}
+
+p {
+    font-weight: bold;
+    line-height: 2;
+    text-indent: 50%;
+}
